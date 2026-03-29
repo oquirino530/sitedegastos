@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel de Controle Financeiro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Painel Financeiro Mensal</h1>
+      <p>Registre suas despesas e acompanhe a performance do seu orçamento com precisão.</p>
+    </header>
+
+    <section class="dashboard">
+      <div class="card">
+        <span>Total de despesas</span>
+        <strong id="totalValue">R$ 0,00</strong>
+      </div>
+      <div class="card">
+        <span>Quantidade de despesas</span>
+        <strong id="expenseCount">0</strong>
+      </div>
+      <div class="card">
+        <span>Maior gasto</span>
+        <strong id="maxExpense">R$ 0,00</strong>
+      </div>
+    </section>
+
+    <section class="graph-section">
+      <h2>Gráficos</h2>
+      <div class="graphs">
+        <div class="chart-card">
+          <h3>Gasto por categoria</h3>
+          <div id="categoryChart" class="bar-chart"></div>
+        </div>
+        <div class="chart-card">
+          <h3>Distribuição</h3>
+          <div class="donut-wrapper">
+            <div id="donutChart" class="donut-chart"></div>
+            <div id="donutLegend" class="donut-legend"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <form id="expenseForm">
+        <div class="form-row">
+          <label for="description">Descrição</label>
+          <input type="text" id="description" placeholder="Ex: Aluguel" required />
+        </div>
+        <div class="form-row">
+          <label for="amount">Valor (R$)</label>
+          <input type="number" id="amount" step="0.01" placeholder="0.00" required />
+        </div>
+        <div class="form-row">
+          <label for="category">Categoria</label>
+          <select id="category">
+            <option value="Moradia">Moradia</option>
+            <option value="Alimentação">Alimentação</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Saúde">Saúde</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Adicionar gasto</button>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <h2>Lista de Gastos</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Categoria</th>
+              <th>Valor</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="expenseList"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
