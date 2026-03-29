@@ -279,6 +279,12 @@ td {
   cursor: pointer;
 }
 
+@media (max-width: 880px) {
+  .graphs {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
   .container {
     padding: 24px 16px 40px;
@@ -290,7 +296,32 @@ td {
 
   .form-section,
   .list-section,
-  .card {
+  .card,
+  .chart-card,
+  .graph-section {
     padding: 20px;
+  }
+
+  .graphs {
+    gap: 14px;
+  }
+
+  .bar-row {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .bar-value {
+    justify-self: start;
+  }
+
+  .donut-wrapper {
+    width: 100%;
+  }
+
+  .donut-chart {
+    width: 100%;
+    max-width: 220px;
+    height: 220px;
   }
 }
